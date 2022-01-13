@@ -6,10 +6,8 @@
     </head>
     <style>
         html, body{
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            background-color: grey;
+            background-color:white;
+            height:100%;
         }
         nav{
             float: left;
@@ -19,9 +17,12 @@
         }
         #team_rank{
             width: 50%;
+            height: 100%;
             float: left;
         }
-        
+        #frame1, #frame2{
+            height: 100%;
+        }
     </style>
     <body>
         <nav><a href="https://brucechen14.github.io/project_page1.html">首頁</a></nav>
@@ -30,43 +31,20 @@
         <nav><a href="https://brucechen14.github.io/project_page4.html">焦點球員</a></nav>
         <br>
         
-        <table id="team_rank">
-            <thead>
-                <caption>分區排行</caption>
-                <tr>
-                    <th>東區</th>
-                    <th>西區</th>
-                </tr>
-            </thead>
-        </table>
-
+        <div id = "team_rank">
+            <table id="team">
+                <iframe src = "https://script.google.com/macros/s/AKfycbzVn9xFiKnpT8ka6-iqcpFtVjOwwh1u0GWq7BKhkMb1SDduZsI2fMgN49fE3bB3vuwm/exec"></iframe>
+            </table>
+        </div>
         <div id="data_rank">
             <table id="score">
-                <thead>
-                    <caption>得分</caption>
-                    <tr>
-                        <th>排名</th>
-                        <th>球員</th>
-                    </tr>
-                </thead>
+                <iframe src = "https://script.google.com/macros/s/AKfycbw_mZ_p7A6gU32E8VB95u8jH3vJz9A8_3Qcfa8wcseD9NLDwNgP8en76_PQrxFB-cZB/exec"></iframe>
             </table>
             <table id="assist">
-                <thead>
-                    <caption>助攻</caption>
-                    <tr>
-                        <th>排名</th>
-                        <th>球員</th>
-                    </tr>
-                </thead>
+                <iframe src = "https://script.google.com/macros/s/AKfycbwnD-vD7i91NY_xfauQN7V0_DFUz2oJrzreqvwCHr6jGelCnZ0Lm2xi9iw36YIPEvLi/exec"></iframe>
             </table>
             <table id="rebound">
-                <thead>
-                    <caption>籃板</caption>
-                    <tr>
-                        <th>排名</th>
-                        <th>球員</th>
-                    </tr>
-                </thead>
+                <iframe src = "https://script.google.com/macros/s/AKfycbzR4Km2nmmbDAvmCQd8-BzQJr8BndppZvDY0mu9hehs3pENvJQw-Ifk4RKfVUivm894pw/exec"></iframe>
             </table>
         </div>
     </body>
