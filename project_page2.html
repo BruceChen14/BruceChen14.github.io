@@ -1,66 +1,124 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Page2</title>
-    </head>
-    <style>
-        html, body{
-            background-color:grey;
-            height: 100%;
-        }
-        nav{
-            float: left;
-            width: calc(100%/4);
-            text-align: center;
-            font-size: 25px;
-            font-weight: bold;
-        }
-        a{
-            text-decoration: none;
-            color: black;
-        }
-        a:hover{
-            background-color:white;
-        }
-        table{
-            border: 1px solid;
-            font-size:100px;
-            width: 70%;
-            margin: auto;
-        }
-        #fram{
-            width: 100%;
-            height: 100%;
-            text-align: center;
-        }
-        div{
-            width: 100%;
-            height: 95%;
-        }
-    </style>
-    <script>
-        
-    </script>
-    <body>
-        <nav><a href="https://brucechen14.github.io/project_page1.html">首頁</a></nav>
-        <nav><a href="https://brucechen14.github.io/project_page2.html">賽程</a></nav>
-        <nav><a href="https://brucechen14.github.io/project_page3.html">數據</a></nav>
-        <nav><a href="https://brucechen14.github.io/project_page4.html">焦點球員</a></nav>
-        <br>
-        <!-- <iframe id="fram"></iframe> -->
-        <div><iframe id = "fram" src="https://script.google.com/macros/s/AKfycbwRNHnyVcS6jLLm6Hhbz1yAfhNPiY-CWYH4CngSVH6FUHM4YOMi4rVNjCgYOOSpNAAfzA/exec" frameborder="0"></iframe>
-        </div>
-        <!-- <table>
-            <thead>
-                <caption>date</caption>
-                <tr>
-                    <th>時間</th>
-                    <th colspan="2">對戰</th>
-                    <th>比分</th>
-                </tr>    
-                
-            </thead>
-        </table> -->
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page2</title>
+  </head>
+  <style>
+    html,
+    body {
+      background-color: grey;
+      height: 100%;
+    }
+
+    nav {
+      float: left;
+      width: calc(100% / 4);
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      background-color: white;
+    }
+
+    table {
+      border: 1px solid;
+      font-size: 100px;
+      width: 70%;
+      margin: auto;
+    }
+
+    #fram {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .box {
+      width: 50%;
+      height: 95%;
+      float: left;
+    }
+    #ballButton {
+      position: relative;
+      top: 900px;
+      left: 800px;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+  </style>
+  <script>
+    var distanceBall = 200;
+    var directionBall = 1;
+    var timerToggle = null;
+    function animateBall() {
+      document.getElementById("basketball").style.top =
+        distanceBall + 230 + "px";
+      distanceBall += directionBall;
+      if (distanceBall > 500) {
+        directionBall = -1;
+      }
+      if (0 > distanceBall) {
+        directionBall = 1;
+      }
+      timerToggle = setTimeout(function () {
+        animateBall();
+      }, 10);
+    }
+
+    function checkButton() {
+      if (document.getElementById("ballButton").value == "Speed up") {
+        document.getElementById("ballButton").value = "Slow down";
+        animateBall();
+      } 
+      else {
+        document.getElementById("ballButton").value = "Speed up";
+        clearTimeout(timerToggle);
+      }
+    }
+    window.addEventListener("load", animateBall, false);
+  </script>
+  <body>
+    <nav>
+      <a href="https://brucechen14.github.io/project_page1.html">首頁</a>
+    </nav>
+    <nav>
+      <a href="https://brucechen14.github.io/project_page2.html">賽程</a>
+    </nav>
+    <nav>
+      <a href="https://brucechen14.github.io/project_page3.html">數據</a>
+    </nav>
+    <nav>
+      <a href="https://brucechen14.github.io/project_page4.html">焦點球員</a>
+    </nav>
+    <br />
+
+    <div class="box">
+      <iframe
+        id="fram"
+        src="https://script.google.com/macros/s/AKfycbwRNHnyVcS6jLLm6Hhbz1yAfhNPiY-CWYH4CngSVH6FUHM4YOMi4rVNjCgYOOSpNAAfzA/exec"
+        frameborder="0"
+      ></iframe>
+    </div>
+    <div class="box">
+      <input
+        id="ballButton"
+        onclick="checkButton()"
+        type="button"
+        value="Speed up"
+      />
+      <div id="basketball" style="position: relative; top: 700px; left: 500px">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Basketball_Clipart.svg/1200px-Basketball_Clipart.svg.png">
+      </div>
+    </div>
+  </body>
 </html>
